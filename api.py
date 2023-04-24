@@ -49,7 +49,6 @@ def predict(data: CancerData):
     input_data_reshaped = input_data.reshape(1,-1)
     prediction = model.predict(input_data_reshaped)
     if (prediction[0] == 0):
-        return {'prediction': 'Malignant','detail': prediction[0][0]}
+        return {'prediction': 'Malignant'}
     else:
-        return {'prediction': 'Benign','detail': prediction[0][1]
-}
+        return {'prediction': 'Benign'}
