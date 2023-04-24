@@ -51,4 +51,5 @@ def predict(data: CancerData):
     if (prediction[0] == 0):
         return {'prediction': 'Malignant'}
     else:
-        return {'prediction': 'Benign'}
+        return {'prediction': 'Benign','detail': prediction
+}
