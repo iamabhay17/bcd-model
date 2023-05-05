@@ -49,7 +49,6 @@ function BcdForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
     navigate("/result", { state: formData });
   };
 
