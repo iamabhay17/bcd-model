@@ -5,12 +5,11 @@ import pickle
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "http://127.0.0.1:5173",
-    "https://bcd-model.vercel.app/"
+    "https://bcd-model.vercel.app",
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
