@@ -12,7 +12,7 @@ export default function Result() {
     async function fetchData() {
       try {
         const response = await axios.post(
-          "http://breast-cancer-detection-55a9.onrender.com/predict",
+          "https://breast-cancer-detection-55a9.onrender.com/predict",
           test
         );
         setResult(response.data);
@@ -34,7 +34,7 @@ export default function Result() {
       >
         {result ? (
           <Card className="text-center">
-            <Card.Header>Malignant Cancer Detected</Card.Header>
+            <Card.Header>{result.prediction} Cancer Detected</Card.Header>
             <Card.Body>
               <Image
                 src="https://images.unsplash.com/photo-1602750981472-01d024fcf92b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHdhcm5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -43,7 +43,7 @@ export default function Result() {
               />
               <Card.Text>
                 Based on the data you provided, our system has detected that you
-                are likely to have malignant cancer. We recommend that you
+                are likely to have {result.prediction} cancer. We recommend that you
                 consult with a medical professional as soon as possible.
               </Card.Text>
             </Card.Body>
